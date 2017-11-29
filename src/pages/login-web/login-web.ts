@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import {UserModelComponent} from '../../components/user-model/user-model'
 
 /**
  * Generated class for the LoginWebPage page.
@@ -8,18 +8,24 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
  * Ionic pages and navigation.
  */
 
-@IonicPage()
 @Component({
   selector: 'page-login-web',
   templateUrl: 'login-web.html',
 })
 export class LoginWebPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  // Declaraciones 
+
+  User:UserModelComponent = new UserModelComponent();
+  
+
+  // Métodos
+  constructor() {
   }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad LoginWebPage');
+    console.log('ionViewDidLoad BienvenidaWebPage');
   }
 
+  
 }

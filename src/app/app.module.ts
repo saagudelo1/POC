@@ -7,12 +7,11 @@ import { StatusBar } from '@ionic-native/status-bar';
 import {LoginWebPage } from '../pages/login-web/login-web';
 import {BienvenidaWebPage } from '../pages/bienvenida-web/bienvenida-web';
 import { MyApp } from './app.component';
-import { HomePage } from '../pages/home/home';
+import { LoginWebProvider } from '../providers/login-web/login-web';
 
 @NgModule({
   declarations: [
     MyApp,
-    HomePage,
     LoginWebPage,
     BienvenidaWebPage
   ],
@@ -23,14 +22,14 @@ import { HomePage } from '../pages/home/home';
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
-    HomePage,
     LoginWebPage,
     BienvenidaWebPage
   ],
   providers: [
     StatusBar,
     SplashScreen,
-    {provide: ErrorHandler, useClass: IonicErrorHandler}
+    {provide: ErrorHandler, useClass: IonicErrorHandler},
+    LoginWebProvider
   ]
 })
 export class AppModule {}
