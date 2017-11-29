@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { IonicPage, NavController, NavParams } from 'ionic-angular';
 /**
  * Generated class for the BienvenidaWebPage page.
  *
@@ -6,6 +7,7 @@ import { Component } from '@angular/core';
  * Ionic pages and navigation.
  */
 
+@IonicPage({name : 'BienvenidaWeb'} )
 @Component({
   selector: 'page-bienvenida-web',
   templateUrl: 'bienvenida-web.html',
@@ -13,3 +15,4 @@ import { Component } from '@angular/core';
 export class BienvenidaWebPage {
 
 }
+

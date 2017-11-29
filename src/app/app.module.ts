@@ -8,22 +8,25 @@ import {LoginWebPage } from '../pages/login-web/login-web';
 import {BienvenidaWebPage } from '../pages/bienvenida-web/bienvenida-web';
 import { MyApp } from './app.component';
 import { LoginWebProvider } from '../providers/login-web/login-web';
+import { FormsModule } from '@angular/forms'; 
 
 @NgModule({
   declarations: [
     MyApp,
     LoginWebPage,
-    BienvenidaWebPage
+
   ],
   imports: [
     BrowserModule,
-    IonicModule.forRoot(MyApp)
+    IonicModule.forRoot(MyApp),
+    FormsModule
+
   ],
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
     LoginWebPage,
-    BienvenidaWebPage
+
   ],
   providers: [
     StatusBar,

@@ -1,5 +1,8 @@
 import { Component } from '@angular/core';
 import {UserModelComponent} from '../../components/user-model/user-model'
+import { BienvenidaWebPage } from '../bienvenida-web/bienvenida-web'
+import { NavController } from 'ionic-angular/navigation/nav-controller';
+
 
 /**
  * Generated class for the LoginWebPage page.
@@ -13,14 +16,17 @@ import {UserModelComponent} from '../../components/user-model/user-model'
   templateUrl: 'login-web.html',
 })
 export class LoginWebPage {
+  
 
+  
   // Declaraciones 
 
   User:UserModelComponent = new UserModelComponent();
   
 
   // Métodos
-  constructor() {
+  constructor(public navCntrl: NavController ) {
+
   }
 
   ionViewDidLoad() {
@@ -28,4 +34,15 @@ export class LoginWebPage {
   }
 
   
+
+  Verificar(){
+
+    console.log(this.User);
+
+  }
+
+  GoBienvenida():void{
+    this.navCntrl.push("BienvenidaWeb");
+
+  }
 }
