@@ -9,8 +9,6 @@ import {BienvenidaWebPage } from '../pages/bienvenida-web/bienvenida-web';
 import { MyApp } from './app.component';
 import { LoginWebProvider } from '../providers/login-web/login-web';
 import { FormsModule } from '@angular/forms';
-import { HttpClientModule } from '@angular/common/http';
-import { UserServiceProvider } from '../providers/user-service/user-service';
 
 @NgModule({
   declarations: [
@@ -20,7 +18,6 @@ import { UserServiceProvider } from '../providers/user-service/user-service';
   ],
   imports: [
     BrowserModule,
-    HttpClientModule,
     IonicModule.forRoot(MyApp),
     FormsModule
 
@@ -35,8 +32,7 @@ import { UserServiceProvider } from '../providers/user-service/user-service';
     StatusBar,
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
-    LoginWebProvider,
-    UserServiceProvider
+    LoginWebProvider
   ]
 })
 export class AppModule {}
