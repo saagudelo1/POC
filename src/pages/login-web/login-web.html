@@ -1,0 +1,36 @@
+<!--
+  Generated template for the LoginWebPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script> 
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"> 
+
+
+<div class="container">
+  
+
+    <div class="page-header">
+      <img src="/assets/imgs/banistmo-bank.png" style="width:200px">
+    </div>
+    <div >
+<h5> Bienvenido al Corresponsal no Bancario</h5>
+
+    </div>
+	<div class="login-container">
+            <div id="output"></div>
+            <div>
+                <img class="img-circle img-thumbnail" src="/assets/imgs/user-icon.png" style="width:90px">
+            </div>
+            <div class="form-box" style="margin-top:25px">
+                <form action="" method="">
+                    <input name="user" [(ngModel)]="User.Username" (change) = "Verificar" type="text" placeholder="username">
+                    <input name="Pass" type="password" [(ngModel)]="User.Password" (change)="Verificar()" placeholder="password">
+                    <button class="btn btn-info btn-block login" (click) = "GoBienvenida()" type="submit">Login</button>
+                </form>
+            </div>
+        </div>
+        
+</div>
