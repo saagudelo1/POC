@@ -8,7 +8,7 @@ import {LoginWebPage } from '../pages/login-web/login-web';
 import {BienvenidaWebPage } from '../pages/bienvenida-web/bienvenida-web';
 import { MyApp } from './app.component';
 import { LoginWebProvider } from '../providers/login-web/login-web';
-import { FormsModule } from '@angular/forms'; 
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [

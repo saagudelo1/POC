@@ -1,5 +1,6 @@
-import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import{ UserModelComponent} from '../../components/user-model/user-model';
+import {USUARIOS} from './mock-usuarios';
 
 /*
   Generated class for the LoginWebProvider provider.
@@ -10,7 +11,16 @@ import { Injectable } from '@angular/core';
 @Injectable()
 export class LoginWebProvider {
 
-  constructor(public http: HttpClient) {
+  BuacarUsuario(usuario:UserModelComponent):boolean{
+    let result = USUARIOS.find(usu => {
+      return usu.Username == usuario.Username && usu.Password == usuario.Password;
+    });
+    console.log(result);
+    
+    return result != undefined;
+  }
+
+  constructor() {
     console.log('Hello LoginWebProvider Provider');
   }
 

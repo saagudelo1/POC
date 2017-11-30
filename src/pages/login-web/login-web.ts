@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import {UserModelComponent} from '../../components/user-model/user-model'
 import { BienvenidaWebPage } from '../bienvenida-web/bienvenida-web'
 import { NavController } from 'ionic-angular/navigation/nav-controller';
+import {LoginWebProvider} from '../../providers/login-web/login-web'
 
 
 /**
@@ -18,14 +19,13 @@ import { NavController } from 'ionic-angular/navigation/nav-controller';
 export class LoginWebPage {
   
 
-  
   // Declaraciones 
 
   User:UserModelComponent = new UserModelComponent();
   
 
   // Métodos
-  constructor(public navCntrl: NavController ) {
+  constructor(public navCntrl: NavController, public _loginProv:LoginWebProvider ) {
 
   }
 
@@ -36,13 +36,15 @@ export class LoginWebPage {
   
 
   Verificar(){
-
     console.log(this.User);
 
   }
 
   GoBienvenida():void{
-    this.navCntrl.push("BienvenidaWeb");
-
+    if(this._loginProv.BuacarUsuario(this.User)){
+      this.navCntrl.push("BienvenidaWeb");
+    }
+    else
+      alert('Usuario no valido');
   }
 }
