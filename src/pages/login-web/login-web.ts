@@ -39,7 +39,15 @@ export class LoginWebPage {
 
   users;
   GoBienvenida():void{
-    this._loginServer.getUsers(this.User);
+    this._loginServer.getUsers(this.User)
+    .subscribe(
+      res => {
+        console.log(res);
+      },
+      err => {
+        console.log("Error occured");
+      }
+    );  
     
       console.log(this.users);
     // if(this._loginProv.BuscarUsuario(this.User)){
