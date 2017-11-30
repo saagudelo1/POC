@@ -9,7 +9,6 @@ import { HomePage } from '../pages/home/home';
 import { BienvenidaMovilPageModule } from '../pages/bienvenida-movil/bienvenida-movil.module';
 import { LoginMovilPage } from '../pages/login-movil/login-movil';
 import { LoginMovilProvider } from '../providers/login-movil/login-movil';
-import {FormsModule} from '@angular/forms';
 
 
 @NgModule({
@@ -23,8 +22,7 @@ import {FormsModule} from '@angular/forms';
   imports: [
     BrowserModule,
     IonicModule.forRoot(MyApp),
-    BienvenidaMovilPageModule,
-    FormsModule
+    BienvenidaMovilPageModule
   
   ],
   bootstrap: [IonicApp],

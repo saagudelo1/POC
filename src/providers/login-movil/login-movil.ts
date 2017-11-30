@@ -1,22 +1,16 @@
-
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { UsuariopComponent } from '../../components/usuariop/usuariop';
-import { Usuarios } from '../mock-usuarios'
 
+/*
+  Generated class for the LoginMovilProvider provider.
 
+  See https://angular.io/guide/dependency-injection for more info on providers
+  and Angular DI.
+*/
 @Injectable()
 export class LoginMovilProvider {
 
-  BuscarUsuario(usuario: UsuariopComponent): boolean {
-    let result = Usuarios.find(usu => {
-      return (usu.Username == usuario.Username && usu.Password == usuario.Password)
-    }
-    )
-    return result != undefined;
-
-  }
-
-  constructor() {
+  constructor(public http: HttpClient) {
     console.log('Hello LoginMovilProvider Provider');
   }
 
