@@ -9,6 +9,8 @@ import {BienvenidaWebPage } from '../pages/bienvenida-web/bienvenida-web';
 import { MyApp } from './app.component';
 import { LoginWebProvider } from '../providers/login-web/login-web';
 import { FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
+import { UserServiceProvider } from '../providers/user-service/user-service';
 
 @NgModule({
   declarations: [
@@ -18,6 +20,7 @@ import { FormsModule } from '@angular/forms';
   ],
   imports: [
     BrowserModule,
+    HttpClientModule,
     IonicModule.forRoot(MyApp),
     FormsModule
 
@@ -32,7 +35,8 @@ import { FormsModule } from '@angular/forms';
     StatusBar,
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
-    LoginWebProvider
+    LoginWebProvider,
+    UserServiceProvider
   ]
 })
 export class AppModule {}
