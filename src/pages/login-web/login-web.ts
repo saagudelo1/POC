@@ -37,9 +37,11 @@ export class LoginWebPage {
   
 
 
-
+  users;
   GoBienvenida():void{
-    console.log(JSON.stringify(this._loginServer.getUsers(this.User)));
+    this._loginServer.getUsers(this.User);
+    
+      console.log(this.users);
     // if(this._loginProv.BuscarUsuario(this.User)){
     //   this.navCntrl.push("BienvenidaWeb");
     // }

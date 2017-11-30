@@ -14,18 +14,22 @@ app.listen(5000,() => {
     console.log("server...");
 })
 
+app.use(function(req, res, next) {
+    res.header("Access-Control-Allow-Origin", '*'); //<-- you can change this with a specific url like http://localhost:4200
+    res.header("Access-Control-Allow-Credentials", true);
+    res.header('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE,OPTIONS');
+    res.header("Access-Control-Allow-Headers", 'Origin,X-Requested-With,Content-Type,Accept,content-type,application/json');
+    next();
+});
+
 
 
 app.post('/', function(req, res, next) {
- 
     console.log(req.body);
-   
-   
     console.log('--------------------------------------');
-    res.setHeader('Access-Control-Allow-Origin', '*');
     var params = {
       username:req.body.username,
-      password:peq.body.password ,
+      password:req.body.password ,
       client_id:"banistmoATM",
       grant_type:"password"
     };

@@ -10,19 +10,34 @@ import { UsuariopComponent } from '../../components/usuariop/usuariop';
 */
 @Injectable()
 export class LoginServeProvider {
-  ServerUrl:string ="http://192.168.3.192:5000/";
+  ServerUrl:string ="http://localhost:5000/";
 
   constructor(public http: HttpClient) {
     console.log('Hello LoginServeProvider Provider');
   }
   getUsers(usu:UsuariopComponent) {
-    var params = {
-      username: usu.Username,
-      password: usu.Password,
-      client_id: "banistmoATM",
-      grant_type:"password"
-    };
 
-    return this.http.post(this.ServerUrl,params);
-  }
+  //   return this.http.post(this.ServerUrl,params).subscribe(() => {
+  //     console.log("hola")
+  // },
+  // err => {
+  //   console.log(err)
+  // });
+  this.http.post("http://192.168.3.177:5000/", {
+    username: usu.Username,
+    password: usu.Password,
+    client_id: "banistmoATM",
+    grant_type:"password"
+  })
+    .subscribe(
+      res => {
+        console.log(res);
+      },
+      err => {
+        console.log("Error occured");
+      }
+    );  
+
+}
+  
 }
