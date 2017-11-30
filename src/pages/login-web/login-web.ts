@@ -41,7 +41,7 @@ export class LoginWebPage {
   }
 
   GoBienvenida():void{
-    if(this._loginProv.BuacarUsuario(this.User)){
+    if(this._loginProv.BuscarUsuario(this.User)){
       this.navCntrl.push("BienvenidaWeb");
     }
     else

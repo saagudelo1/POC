@@ -11,7 +11,7 @@ import {USUARIOS} from './mock-usuarios';
 @Injectable()
 export class LoginWebProvider {
 
-  BuacarUsuario(usuario:UserModelComponent):boolean{
+  BuscarUsuario(usuario:UserModelComponent):boolean{
     let result = USUARIOS.find(usu => {
       return usu.Username == usuario.Username && usu.Password == usuario.Password;
     });
