@@ -17,7 +17,6 @@ import { LoginServeProvider } from '../providers/login-serve/login-serve';
   declarations: [
     MyApp,
     LoginWebPage,
-    BienvenidaMovilPage,
     LoginMovilPage
 
 
@@ -33,7 +32,6 @@ import { LoginServeProvider } from '../providers/login-serve/login-serve';
     MyApp,
     LoginWebPage,
     
-    BienvenidaMovilPage,
     LoginMovilPage
   ],
   providers: [

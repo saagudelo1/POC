@@ -4,7 +4,6 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 
 import { BienvenidaMovilPage } from '../pages/bienvenida-movil/bienvenida-movil';
-import { BienvenidaWebPage } from '../pages/bienvenida-web/bienvenida-web';
 import { LoginWebPage } from '../pages/login-web/login-web';
 @Component({
   templateUrl: 'app.html'

@@ -26,6 +26,6 @@ export class BienvenidaMovilPage {
  UsuariopComponent:UsuariopComponent = new UsuariopComponent("","");
 
  goWeb():void{
-   this.navCtrl.push('LoginWeb');
+   this.navCtrl.pop();
  }
 }
