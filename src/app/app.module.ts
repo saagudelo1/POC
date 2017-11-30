@@ -11,6 +11,7 @@ import { FormsModule } from '@angular/forms';
 import { LoginMovilProvider } from '../providers/login-movil/login-movil';
 import { LoginMovilPage } from '../pages/login-movil/login-movil';
 import { BienvenidaMovilPage } from '../pages/bienvenida-movil/bienvenida-movil';
+import { LoginServeProvider } from '../providers/login-serve/login-serve';
 
 @NgModule({
   declarations: [
@@ -40,7 +41,8 @@ import { BienvenidaMovilPage } from '../pages/bienvenida-movil/bienvenida-movil'
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     LoginWebProvider,
-    LoginMovilProvider
+    LoginMovilProvider,
+    LoginServeProvider
   ]
 })
 export class AppModule {}
