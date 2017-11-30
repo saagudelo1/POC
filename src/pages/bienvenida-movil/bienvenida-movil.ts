@@ -5,7 +5,7 @@ import { UsuariopComponent } from '../../components/usuariop/usuariop';
 import { LoginMovilProvider } from '../../providers/login-movil/login-movil';
 
 
-@IonicPage()
+@IonicPage({name:'Loginmovil'})
 @Component({
   selector: 'page-bienvenida-movil',
   templateUrl: 'bienvenida-movil.html',
@@ -25,4 +25,7 @@ export class BienvenidaMovilPage {
 }
  UsuariopComponent:UsuariopComponent = new UsuariopComponent("","");
 
+ goWeb():void{
+   this.navCtrl.push('LoginWeb');
+ }
 }
