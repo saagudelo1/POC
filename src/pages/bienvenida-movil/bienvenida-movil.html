@@ -1,0 +1,32 @@
+<ion-content padding id="Bienvenida">
+  <h1>
+  <img src="assets/imgs/logo.png" class="logo/"></h1>
+  
+    <ion-row> 
+      <ion-col>
+         <div> Bienvenido al Corresponsal no Bancario </div> 
+      </ion-col>
+    </ion-row>                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        
+  <br>
+  <br>
+  <br>
+  <div class="sepaTOR"></div>
+
+  <ion-list>
+      
+        <ion-item>
+          <ion-label fixed>Username</ion-label>
+          <ion-input type="text" value="" name="user" [(ngModel)]="UsuariopComponent.Username" ></ion-input>
+        </ion-item>
+      
+        <ion-item>
+          <ion-label fixed>Password</ion-label>
+          <ion-input type="password" [(ngModel)]="UsuariopComponent.Password"></ion-input>
+        </ion-item>
+      
+      </ion-list>
+
+  <button ion-button full (click)="goLogin()">Login</button>
+  
+  </ion-content>
+  

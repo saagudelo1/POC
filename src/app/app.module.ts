@@ -4,39 +4,43 @@ import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { StatusBar } from '@ionic-native/status-bar';
 
-import {LoginWebPage } from '../pages/login-web/login-web';
-import {BienvenidaWebPage } from '../pages/bienvenida-web/bienvenida-web';
 import { MyApp } from './app.component';
-import { LoginWebProvider } from '../providers/login-web/login-web';
-import { FormsModule } from '@angular/forms';
-import { HttpClientModule } from '@angular/common/http';
-import { UserServiceProvider } from '../providers/user-service/user-service';
+import { HomePage } from '../pages/home/home';
+import { BienvenidaMovilPageModule } from '../pages/bienvenida-movil/bienvenida-movil.module';
+import { LoginMovilPage } from '../pages/login-movil/login-movil';
+import { LoginMovilProvider } from '../providers/login-movil/login-movil';
+import {FormsModule} from '@angular/forms';
+
 
 @NgModule({
   declarations: [
     MyApp,
-    LoginWebPage,
-
+    HomePage,
+    //BienvenidaMovilPage,
+    LoginMovilPage,
+    
   ],
   imports: [
     BrowserModule,
-    HttpClientModule,
     IonicModule.forRoot(MyApp),
+    BienvenidaMovilPageModule,
     FormsModule
-
+  
   ],
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
-    LoginWebPage,
-
+    HomePage,
+   // BienvenidaMovilPage,
+    LoginMovilPage,
+   
+    
   ],
   providers: [
     StatusBar,
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
-    LoginWebProvider,
-    UserServiceProvider
+    LoginMovilProvider
   ]
 })
 export class AppModule {}
