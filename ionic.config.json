@@ -1,6 +1,6 @@
 {
   "name": "POC",
-  "app_id": "",
+  "app_id": "52c8b90b",
   "type": "ionic-angular",
   "integrations": {
     "cordova": {}
