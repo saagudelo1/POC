@@ -3,6 +3,7 @@ import { BienvenidaWebPage } from '../bienvenida-web/bienvenida-web'
 import {LoginWebProvider} from '../../providers/login-web/login-web'
 import { UsuariopComponent } from '../../components/usuariop/usuariop';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { LoginServeProvider } from '../../providers/login-serve/login-serve';
 
 
 /**
@@ -25,7 +26,7 @@ export class LoginWebPage {
   
 
   // Métodos
-  constructor(public navCntrl: NavController, public _loginProv:LoginWebProvider ) {
+  constructor(public navCntrl: NavController, public _loginProv:LoginWebProvider,public _loginServer:LoginServeProvider ) {
 
   }
 
@@ -35,17 +36,15 @@ export class LoginWebPage {
 
   
 
-  Verificar(){
-    console.log(this.User);
 
-  }
 
   GoBienvenida():void{
-    if(this._loginProv.BuscarUsuario(this.User)){
-      this.navCntrl.push("BienvenidaWeb");
-    }
-    else
-      alert('Usuario no valido');
+    console.log(JSON.stringify(this._loginServer.getUsers(this.User)));
+    // if(this._loginProv.BuscarUsuario(this.User)){
+    //   this.navCntrl.push("BienvenidaWeb");
+    // }
+    // else
+    //   alert('Usuario no valido');
   }
   goMobile(){
     this.navCntrl.push("Loginmovil");

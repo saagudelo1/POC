@@ -12,6 +12,7 @@ import { LoginMovilProvider } from '../providers/login-movil/login-movil';
 import { LoginMovilPage } from '../pages/login-movil/login-movil';
 import { BienvenidaMovilPage } from '../pages/bienvenida-movil/bienvenida-movil';
 import { LoginServeProvider } from '../providers/login-serve/login-serve';
+import { HttpClientModule  } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -19,19 +20,17 @@ import { LoginServeProvider } from '../providers/login-serve/login-serve';
     LoginWebPage,
     LoginMovilPage
 
-
   ],
   imports: [
     BrowserModule,
     IonicModule.forRoot(MyApp),
-    FormsModule
-
+    FormsModule,
+    HttpClientModule 
   ],
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
     LoginWebPage,
-    
     LoginMovilPage
   ],
   providers: [
@@ -40,7 +39,7 @@ import { LoginServeProvider } from '../providers/login-serve/login-serve';
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     LoginWebProvider,
     LoginMovilProvider,
-    LoginServeProvider
+    LoginServeProvider,
   ]
 })
 export class AppModule {}

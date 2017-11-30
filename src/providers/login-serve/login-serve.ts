@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { UsuariopComponent } from '../../components/usuariop/usuariop';
 
 /*
   Generated class for the LoginServeProvider provider.
@@ -14,10 +15,10 @@ export class LoginServeProvider {
   constructor(public http: HttpClient) {
     console.log('Hello LoginServeProvider Provider');
   }
-  getUsers() {
+  getUsers(usu:UsuariopComponent) {
     var params = {
-      username: "diego",
-      password: "Banistmo123",
+      username: usu.Username,
+      password: usu.Password,
       client_id: "banistmoATM",
       grant_type:"password"
     };

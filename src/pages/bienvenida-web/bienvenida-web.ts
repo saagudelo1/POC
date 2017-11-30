@@ -14,7 +14,6 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class BienvenidaWebPage {
   constructor(public navCntrl: NavController) {
-    
       }
   goLogin():void{
       this.navCntrl.pop();
