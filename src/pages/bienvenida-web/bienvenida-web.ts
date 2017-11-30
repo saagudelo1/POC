@@ -13,6 +13,12 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
   templateUrl: 'bienvenida-web.html',
 })
 export class BienvenidaWebPage {
+  constructor(public navCntrl: NavController) {
+    
+      }
+  goLogin():void{
+      this.navCntrl.pop();
+  }
 
 }
 

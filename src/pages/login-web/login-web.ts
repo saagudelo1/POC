@@ -1,8 +1,8 @@
 import { Component } from '@angular/core';
-import {UserModelComponent} from '../../components/user-model/user-model'
 import { BienvenidaWebPage } from '../bienvenida-web/bienvenida-web'
-import { NavController } from 'ionic-angular/navigation/nav-controller';
 import {LoginWebProvider} from '../../providers/login-web/login-web'
+import { UsuariopComponent } from '../../components/usuariop/usuariop';
+import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
 
 /**
@@ -11,7 +11,7 @@ import {LoginWebProvider} from '../../providers/login-web/login-web'
  * See https://ionicframework.com/docs/components/#navigation for more info on
  * Ionic pages and navigation.
  */
-
+@IonicPage({name : 'LoginWeb'} )
 @Component({
   selector: 'page-login-web',
   templateUrl: 'login-web.html',
@@ -20,8 +20,8 @@ export class LoginWebPage {
   
 
   // Declaraciones 
-
-  User:UserModelComponent = new UserModelComponent();
+  
+  User:UsuariopComponent = new UsuariopComponent("","");
   
 
   // Métodos
@@ -46,5 +46,8 @@ export class LoginWebPage {
     }
     else
       alert('Usuario no valido');
+  }
+  goMobile(){
+    this.navCntrl.push("Loginmovil");
   }
 }

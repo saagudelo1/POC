@@ -1,10 +1,10 @@
-import {UserModelComponent} from "../../components/user-model/user-model";
+import { UsuariopComponent } from "../../components/usuariop/usuariop";
 
-export const USUARIOS: UserModelComponent[]= [
-			UserModelComponent.NewUser("santiago","acn123"),
-			UserModelComponent.NewUser("juan","acn123"),
-			UserModelComponent.NewUser("cristian","acn123"),
-			UserModelComponent.NewUser("dianax2","acn123"),
-			UserModelComponent.NewUser("sandra","acn123")
+export const USUARIOS: UsuariopComponent[]= [
+			new UsuariopComponent("santiago","acn123"),
+			new UsuariopComponent("juan","acn123"),
+			new UsuariopComponent("cristian","acn123"),
+			new UsuariopComponent("dianax2","acn123"),
+			new UsuariopComponent("sandra","acn123")
             
 ];

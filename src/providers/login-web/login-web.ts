@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
-import{ UserModelComponent} from '../../components/user-model/user-model';
 import {USUARIOS} from './mock-usuarios';
+import { UsuariopComponent } from '../../components/usuariop/usuariop';
 
 /*
   Generated class for the LoginWebProvider provider.
@@ -11,7 +11,7 @@ import {USUARIOS} from './mock-usuarios';
 @Injectable()
 export class LoginWebProvider {
 
-  BuscarUsuario(usuario:UserModelComponent):boolean{
+  BuscarUsuario(usuario:UsuariopComponent):boolean{
     let result = USUARIOS.find(usu => {
       return usu.Username == usuario.Username && usu.Password == usuario.Password;
     });
