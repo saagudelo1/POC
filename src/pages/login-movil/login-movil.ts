@@ -1,22 +1,24 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { Router, ActivatedRoute, ParamMap } from '@angular/router';
 
 
 
-@IonicPage({name:'Bienvenido'})
 @Component({
   selector: 'page-login-movil',
   templateUrl: 'login-movil.html',
 })
 export class LoginMovilPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(public router:Router) {
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad LoginMovilPage');
   }
- 
+  goLogin():void{
+    this.router.navigate(['/LoginMovil']);
+    
+  }
 
 
 }

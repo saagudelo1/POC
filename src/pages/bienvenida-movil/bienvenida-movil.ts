@@ -4,16 +4,17 @@ import { LoginMovilPage } from '../login-movil/login-movil';
 import { UsuariopComponent } from '../../components/usuariop/usuariop';
 import { LoginMovilProvider } from '../../providers/login-movil/login-movil';
 import { LoginServeProvider } from '../../providers/login-serve/login-serve';
+import { Router, ActivatedRoute, ParamMap } from '@angular/router';
 
 
-@IonicPage({name:'Loginmovil'})
 @Component({
   selector: 'page-bienvenida-movil',
   templateUrl: 'bienvenida-movil.html',
 })
 export class BienvenidaMovilPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, public servi:LoginMovilProvider,public _loginServer:LoginServeProvider) {
+  constructor(public servi:LoginMovilProvider,public _loginServer:LoginServeProvider,
+    public router: Router) {
   }
 
   ionViewDidLoad() {
@@ -27,10 +28,13 @@ export class BienvenidaMovilPage {
  UsuariopComponent:UsuariopComponent = new UsuariopComponent("","");
 
  goWeb():void{
-   this.navCtrl.pop();
+  this.router.navigate(['/']);
+  
  }
  goLogin():void{
   console.log(JSON.stringify(this._loginServer.getUsers(this.UsuariopComponent)));
+  this.router.navigate(['/BienvenidaMovil']);
+  
   // if(this._loginProv.BuscarUsuario(this.User)){
   //   this.navCntrl.push("BienvenidaWeb");
   // }

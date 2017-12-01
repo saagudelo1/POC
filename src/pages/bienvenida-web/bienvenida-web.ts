@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { Router, ActivatedRoute, ParamMap } from '@angular/router';
+
 /**
  * Generated class for the BienvenidaWebPage page.
  *
@@ -7,16 +8,16 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
  * Ionic pages and navigation.
  */
 
-@IonicPage({name : 'BienvenidaWeb'} )
 @Component({
   selector: 'page-bienvenida-web',
   templateUrl: 'bienvenida-web.html',
 })
 export class BienvenidaWebPage {
-  constructor(public navCntrl: NavController) {
+  constructor(public router:Router) {
       }
   goLogin():void{
-      this.navCntrl.pop();
+    this.router.navigate(['/']);
+    
   }
 
 }

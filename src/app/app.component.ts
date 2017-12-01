@@ -9,7 +9,6 @@ import { LoginWebPage } from '../pages/login-web/login-web';
   templateUrl: 'app.html'
 })
 export class MyApp {
-  rootPage:any = LoginWebPage;
 
   constructor(platform: Platform, statusBar: StatusBar, splashScreen: SplashScreen) {
     platform.ready().then(() => {

@@ -13,25 +13,41 @@ import { LoginMovilPage } from '../pages/login-movil/login-movil';
 import { BienvenidaMovilPage } from '../pages/bienvenida-movil/bienvenida-movil';
 import { LoginServeProvider } from '../providers/login-serve/login-serve';
 import { HttpClientModule  } from '@angular/common/http';
+import { RouterModule, Routes } from '@angular/router';
+
+
+const appRoutes: Routes = [
+  { path: '', component: LoginWebPage,  pathMatch: 'full' },
+  { path: 'LoginMovil',  component: BienvenidaMovilPage },  
+  { path: 'BienvenidaWeb', component: BienvenidaWebPage },
+  { path: 'BienvenidaMovil', component: LoginMovilPage }
+];
 
 @NgModule({
   declarations: [
     MyApp,
     LoginWebPage,
-    LoginMovilPage
+    LoginMovilPage,
+    BienvenidaMovilPage,
+    BienvenidaWebPage
 
   ],
   imports: [
     BrowserModule,
     IonicModule.forRoot(MyApp),
     FormsModule,
-    HttpClientModule 
+    HttpClientModule,
+    RouterModule.forRoot(
+      appRoutes
+    )
   ],
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
     LoginWebPage,
-    LoginMovilPage
+    LoginMovilPage,
+    BienvenidaMovilPage,
+    BienvenidaWebPage
   ],
   providers: [
     StatusBar,

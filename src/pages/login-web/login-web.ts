@@ -2,8 +2,8 @@ import { Component } from '@angular/core';
 import { BienvenidaWebPage } from '../bienvenida-web/bienvenida-web'
 import {LoginWebProvider} from '../../providers/login-web/login-web'
 import { UsuariopComponent } from '../../components/usuariop/usuariop';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { LoginServeProvider } from '../../providers/login-serve/login-serve';
+import { Router, ActivatedRoute, ParamMap } from '@angular/router';
 
 
 /**
@@ -12,7 +12,6 @@ import { LoginServeProvider } from '../../providers/login-serve/login-serve';
  * See https://ionicframework.com/docs/components/#navigation for more info on
  * Ionic pages and navigation.
  */
-@IonicPage({name : 'LoginWeb'} )
 @Component({
   selector: 'page-login-web',
   templateUrl: 'login-web.html',
@@ -26,7 +25,10 @@ export class LoginWebPage {
   
 
   // Métodos
-  constructor(public navCntrl: NavController, public _loginProv:LoginWebProvider,public _loginServer:LoginServeProvider ) {
+  constructor(
+    public _loginProv:LoginWebProvider,
+    public _loginServer:LoginServeProvider ,
+    public router: Router) {
 
   }
 
@@ -37,19 +39,18 @@ export class LoginWebPage {
   
 
 
-  users;
   GoBienvenida():void{
     this._loginServer.getUsers(this.User)
     .subscribe(
       res => {
         console.log(res);
+        this.router.navigate(['/BienvenidaWeb']);
       },
       err => {
         console.log("Error occured");
       }
     );  
     
-      console.log(this.users);
     // if(this._loginProv.BuscarUsuario(this.User)){
     //   this.navCntrl.push("BienvenidaWeb");
     // }
@@ -57,6 +58,6 @@ export class LoginWebPage {
     //   alert('Usuario no valido');
   }
   goMobile(){
-    this.navCntrl.push("Loginmovil");
+    this.router.navigate(['/LoginMovil']);
   }
 }
