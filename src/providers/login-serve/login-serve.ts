@@ -10,7 +10,7 @@ import { UsuariopComponent } from '../../components/usuariop/usuariop';
 */
 @Injectable()
 export class LoginServeProvider {
-  ServerUrl:string ="http://192.168.3.177:5000/";
+  ServerUrl:string ="http://192.168.3.187:5000/";
 
   constructor(public http: HttpClient) {
     console.log('Hello LoginServeProvider Provider');
