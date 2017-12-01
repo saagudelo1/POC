@@ -33,7 +33,6 @@ app.post('/', function(req, res, next) {
       client_id:"banistmoATM",
       grant_type:"password"
     };
-
       
    
     params.typeCard = req.body.typeCard;
