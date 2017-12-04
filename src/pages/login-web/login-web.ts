@@ -6,12 +6,6 @@ import { LoginServeProvider } from '../../providers/login-serve/login-serve';
 import { Router, ActivatedRoute, ParamMap } from '@angular/router';
 
 
-/**
- * Generated class for the LoginWebPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
 @Component({
   selector: 'page-login-web',
   templateUrl: 'login-web.html',
@@ -43,19 +37,21 @@ export class LoginWebPage {
     this._loginServer.getUsers(this.User)
     .subscribe(
       res => {
-        console.log(res);
-        this.router.navigate(['/BienvenidaWeb']);
+        var Resultado:JSON = JSON.parse(JSON.stringify(res["Resultado"]));
+        if (Resultado["error"] != undefined)
+          alert(Resultado["error"]);
+          else{
+          alert(Resultado);
+          this.router.navigate(['/BienvenidaWeb']);
+          }
       },
       err => {
+        console.error(err);
+        alert(JSON.parse(JSON.stringify(err)));
         console.log("Error occured");
       }
     );  
-    
-    // if(this._loginProv.BuscarUsuario(this.User)){
-    //   this.navCntrl.push("BienvenidaWeb");
-    // }
-    // else
-    //   alert('Usuario no valido');
+
   }
   goMobile(){
     this.router.navigate(['/LoginMovil']);
